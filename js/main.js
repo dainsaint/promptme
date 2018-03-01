@@ -9,6 +9,28 @@ $(document).ready( function(){
     $("#image-1").attr("src", img + Number.random(0,1000) );
     $("#image-2").attr("src", img + Number.random(0,1000) );
 
+
+
+    appendRandomWord();
+    appendRandomWord();
+    appendRandomWord();
+
+
+
+        var quoteUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
+
+        $.get( quoteUrl )
+            .then( (data) => {
+
+                $("#quoteText").html( data.quoteText );
+
+            });
+
+})
+
+
+function appendRandomWord()
+{
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     $.get( "https://api.datamuse.com/sug?s=" + alphabet[ Number.random(0,26) ] )
@@ -16,17 +38,8 @@ $(document).ready( function(){
             console.log(data);
 
             var d = data.sample();
-            $("#wordText").html( d.word );
-
+            var html = $("#wordText").html();
+            html += d.word + " " ;
+            $("#wordText").html( html );
         });
-
-
-
-            $.post( "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en" )
-                .then( (data) => {
-
-                    $("#quoteText").html( data.quoteText );
-
-                });
-
-})
+}
