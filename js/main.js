@@ -17,12 +17,17 @@ $(document).ready( function(){
 
 
 
-        var quoteUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
+        var quoteUrl = "https://api.forismatic.com/api/1.0/"
 
-        $.get( quoteUrl )
+        $.post( quoteUrl, {
+            method: "getQuote",
+            format: "json",
+            lang: "en"
+        })
             .then( (data) => {
-
+                // console.log(data);
                 $("#quoteText").html( data.quoteText );
+                $("#quoteAuthor").html(data.quoteAuthor);
 
             });
 
@@ -35,7 +40,7 @@ function appendRandomWord()
 
     $.get( "https://api.datamuse.com/sug?s=" + alphabet[ Number.random(0,26) ] )
         .then( (data) => {
-            console.log(data);
+            // console.log(data);
 
             var d = data.sample();
             var html = $("#wordText").html();
