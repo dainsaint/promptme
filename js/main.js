@@ -22,7 +22,7 @@ $(document).ready( function(){
 
 
 
-            $.post( "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en" )
+            $.post( "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en" )
                 .then( (data) => {
 
                     $("#quoteText").html( data.quoteText );
