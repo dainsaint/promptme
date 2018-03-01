@@ -3,11 +3,11 @@ Sugar.extend();
 $(document).ready( function(){
 
 
-    var img = "https://picsum.photos/1600/1900?image=";
+    var img = "https://picsum.photos/1600/1900?random";
 
 
-    $("#image-1").attr("src", img + Number.random(0,1000) );
-    $("#image-2").attr("src", img + Number.random(0,1000) );
+    $("#image-1").attr("src", "https://picsum.photos/1600/1900?random" );
+    $("#image-2").attr("src", "http://lorempixel.com/1600/1900/" );
 
 
 
