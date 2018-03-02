@@ -1,0 +1,135 @@
+html, body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+h1
+{
+    font-family: "Bungee";
+}
+
+.grid
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.column
+{
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    display: block;
+    float:left;
+    background-position: : center center;
+    background-size: cover;
+
+    text-align: center;
+    vertical-align: bottom;
+    padding-bottom: 10%;
+    position: relative;
+}
+
+.column .download
+{
+
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50px) scale(2);
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+
+    transition: opacity .2s, transform .2s;
+}
+
+.column:hover .download
+{
+    transform: translateX(-50px) scale( 1 );
+    opacity: 1;
+}
+
+a.column
+{
+    color: white;
+    font-size: 100px;
+}
+
+.words
+{
+    max-width: 50%;
+    max-height: 30%;
+    text-align: center;
+    color: white;
+    pointer-events: all;
+    opacity: 1;
+    
+}
+
+
+
+.container
+{
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+    position: absolute;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+
+}
+
+.overlay
+{
+    background: rgba(0,0,0,.7);
+    position: absolute;
+    width:100%;
+    height:100%;
+
+    transition: background-color .2s;
+}
+
+
+.column:hover .overlay{
+    background: rgba(0,0,0,0);
+}
+
+
+
+#wordText
+{
+    font-family: "Bungee";
+    font-size: 1.5em;
+}
+
+
+#quoteText{
+    font-family: "Cormorant Garamond";
+    font-size: 30px;
+}
+
+#quoteAuthor{
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+}
+
+#quoteAuthor:before
+{
+    content: "— ";
+}
+
+#quoteAuthor:after
+{
+    content: " —";
+}

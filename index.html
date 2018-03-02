@@ -11,12 +11,15 @@
         <!-- <link rel="apple-touch-icon" href="icon.png"> -->
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"> -->
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sugar/2.0.4/sugar.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Bungee|Cormorant+Garamond" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -26,29 +29,31 @@
         <!-- Add your site or application content here -->
 
         <div class="ui container">
-        <h1>Prompt Me.</h1>
 
+            <div class="words">
+                <h1>Prompt Me.</h1>
 
-
-        <h2 id="quoteText"></h2>
-        <h4 id="quoteAuthor"></h4>
-        <h3 id="wordText"></h3>
-
-        <div class="ui grid">
-            <div class="eight wide column">
-                <img id="image-1" class="ui fluid image" src="">
+                <p id="quoteText"></p>
+                <p id="quoteAuthor"></p>
+                <p id="wordText"></p>
             </div>
-            <div class="eight wide column">
-                <img id="image-2" class="ui fluid image" src="">
-            </div>
+
         </div>
 
-    </div>
-
-
-
-
-
+        <div class="ui grid">
+            <a id="image-1" class="eight wide column" href="" download="prompt-1">
+                <div class="overlay"></div>
+                <div class="download">
+                    <i class="fas fa-chevron-circle-down"></i>
+                </div>
+            </a>
+            <a id="image-2" class="eight wide column" href="" download="prompt-2">
+                <div class="overlay"></div>
+                <div class="download">
+                    <i class="fas fa-chevron-circle-down"></i>
+                </div>
+            </a>
+        </div>
 
 
 

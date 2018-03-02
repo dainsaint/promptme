@@ -5,10 +5,38 @@ $(document).ready( function(){
 
     var img = "https://picsum.photos/1600/1900?random";
 
+    //
+    // $("#image-1")
+    //     .attr("href", "https://picsum.photos/1600/1900?random" )
+    //     .css( {backgroundImage: "url('https://picsum.photos/1600/1900?random')"});
 
-    $("#image-1").attr("src", "https://picsum.photos/1600/1900?random" );
-    $("#image-2").attr("src", "http://lorempixel.com/1600/1900/" );
+    $("#image-2")
+        .attr("href", "http://lorempixel.com/1600/1900/" )
+        .css( {backgroundImage: "url('http://lorempixel.com/1600/1900/')"});
 
+
+
+
+
+    var picsumUrl = "https://picsum.photos/list"
+
+    var setImage = function( target, id )
+    {
+        var bigUrl = "https://picsum.photos/1600/1900?image=" + id;
+        var smallUrl = "https://picsum.photos/800/950?image=" + id;
+
+        $( target )
+                .attr("href", bigUrl )
+                .css( {backgroundImage: "url('"+smallUrl+"')"})
+                .fadeIn();
+    }
+
+    var ids = ["#image-1", "#image-2"];
+
+    $.get( picsumUrl )
+        .then( data => {
+            ids.forEach( id => setImage( id, data.sample().id ) );
+        })
 
 
     appendRandomWord();
@@ -42,7 +70,11 @@ function appendRandomWord()
             data.shift();
             var d = data.sample();
             var html = $("#wordText").html();
-            html += d.word + " " ;
+            if( html != "" )
+                html += " &middot; ";
+
+            html += d.word;
+
             $("#wordText").html( html );
         });
 }
